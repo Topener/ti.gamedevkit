@@ -28,16 +28,18 @@ var deckInstance = new (require('ti.gamedevkit/cards'))({
 });
 ```
 
-There are 2 properties that can be provided at this stage. 
+#### DeckInstance
+
+**Properties** 
 
 - **backImage** - the image on the backside of the card. Good dimension for back is 932 x 1376 (or that ratio). Image has to be local
 - **animationSpeed** - For all animation purposes, like flip or animateTo
 
-`DeckInstance` has a couple exposed methods
+**Methods**
 
 - **createDeck(deckArgs)** - Creates a new deck of playing cards. Will return an array of all 52 cards
 - **getDeck(deckArgs)** - returns existing deck of cards, or will generate a new deck if one has not yet been created
-- **createCard(deckArgs)** - Create a new card with custom attributes.
+- **createCard(deckArgs)** - Create a new card with custom attributes. 
   
   `deckArgs` is an object which contains configuration for creation of the cards. Most properties are only used for the `createCard` method
    - **left** - The left/x property for positioning of the card(s)
@@ -54,3 +56,20 @@ There are 2 properties that can be provided at this stage.
 - **reset()** - Resets all cards to original position and flips them with backs up, then does a shuffle
 - **getBack()** returns a blob of the image for the backside of the cards
 - **getTopCardFromDeck()** - Based on sorting of the deck will return the card on the top
+
+#### Card
+
+A single card, created through either `deckInstance.createDeck()` or `deckInstance.createCard()` is a View with a nested ImageView containing the card itself. This card has a couple custom properties exposed you can use for identifying the card.
+
+**Properties**
+
+- **face** - The face of the card. Either "front" or "back"
+- **state** - The state of the card. Currently defaults to `deck` when using the `createDeck` method.
+- **hand** - The hand the card is in. Free to your interpretation. Defaults to "main"
+- **number** - The number of the card (2-10 or J/Q/K/A)
+- **type** - Type of the card. hearts/clubs/diamonds/spades
+
+**Methods**
+
+- **flip()** - Flips the card
+- **animateTo(top ,left, flip)** - Animate the card to the provided top/left position. Optionally a 3rd parameter for if you want the card to flip after animation is done
