@@ -15,6 +15,9 @@ To install, copy any library file you want to have to your project, plus copy th
 
 **Dependency**: You need to install the [to.imagecache](https://github.com/Topener/To.ImageCache/) module as well.
 
+## General note
+All libraries are "to-be-used" on a wrapping view you can call your canvas. All elements created rely on positioning based on top/left. For complicated positioning you'll have to keep track of calculations for all positions. This is not build in any of the libraries.
+
 ### ti.gamedevkit/cards
 
 The cards library allows you to instantly make a deck of cards, with helper functions like shuffle, flip and animate to position.
@@ -56,7 +59,7 @@ The deckInstance also has a list of methods exposed
    - **face** - (createCard only) - The facing of the card (back/front)
    - **hand** - (createCard Only) - The hand the card is supposed to be in, up to your own interpretation. Default is `main`
    - **state** - (createCard only) - State of the hand, up to your interpretation. Set to "deck" when using `createDeck` method 
-- **dealDeckCardToPosition(card, top, left)** - deals the top card to a new position and returns said card. Provide the card alongside the top/left positioning attributes
+- **dealDeckCardToPosition(top, left, flip)** - deals the top card to a new position and returns said card. Provide the top/left positioning attributes for position to animate the card to. An optional flip attribute if you want the card flipped after animation.
 - **setBackImage(image)** - Set the back image for all cards provided. Provide blob or local image path. 
 - **shuffle()** - will shuffle cards randomly, using zIndex for UI purposes
 - **reset()** - Resets all cards to original position and flips them with backs up, then does a shuffle
