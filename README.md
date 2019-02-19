@@ -38,7 +38,8 @@ There are 2 properties that can be provided at this stage.
 - **createDeck(deckArgs)** - Creates a new deck of playing cards. Will return an array of all 52 cards
 - **getDeck(deckArgs)** - returns existing deck of cards, or will generate a new deck if one has not yet been created
 - **createCard(deckArgs)** - Create a new card with custom attributes.
-   `deckArgs` is an object which contains configuration for creation of the cards. Most properties are only used for the `createCard` method
+  
+  `deckArgs` is an object which contains configuration for creation of the cards. Most properties are only used for the `createCard` method
    - **left** - The left/x property for positioning of the card(s)
    - **top** - The top/y property for positioning of the card(s)
    - **height** - The height of the card, width is deducted from this
