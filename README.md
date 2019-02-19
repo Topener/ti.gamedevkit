@@ -1,11 +1,13 @@
 # Titanium Game Dev Kit
 
-The Titanium Game Dev Kit contains multiple libraries for making simple games. Right now primarily focussed on card games. Any requests are appreciated (submit a ticket) as I'm looking for ways of expanding this collection of library
+The Titanium Game Dev Kit contains multiple libraries for making simple games. Right now primarily focussed on card games. 
+
+Any requests are appreciated (submit a ticket) as I'm looking for ways of expanding this collection of libraries
 
 ## Current Libraries
 
-- ti.gamedevkit/cards
-- ti.gamedevkit/chips
+- [ti.gamedevkit/cards](#tigamedevkitcards)
+- [ti.gamedevkit/chips](#tigamedevkitchips)
 
 ## Installation
 
@@ -13,7 +15,7 @@ To install, copy any library file you want to have to your project, plus copy th
 
 **Dependency**: You need to install the [to.imagecache](https://github.com/Topener/To.ImageCache/) module as well.
 
-### ti.gamedevkit.cards
+### ti.gamedevkit/cards
 
 The cards library allows you to instantly make a deck of cards, with helper functions like shuffle, flip and animate to position.
 
@@ -73,3 +75,47 @@ A single card, created through either `deckInstance.createDeck()` or `deckInstan
 
 - **flip()** - Flips the card
 - **animateTo(top ,left, flip)** - Animate the card to the provided top/left position. Optionally a 3rd parameter for if you want the card to flip after animation is done
+
+
+### ti.gamedevkit/chips
+
+The Chips library is for creating poker chips. There is no logic in this besides a fun "flip" animation.
+
+**Usage**
+
+You can create chips through both Alloy and classic code.
+
+```js
+var chip = require('ti.gamedevkit/chips').createChip({
+    width: 200,
+    value: 25,
+    left: 100,
+    top: 100
+});
+```
+
+Alloy:
+
+```xml
+    <Chip module="ti.gamedevkit/chips" value="25" left="100" top="100" width="200" />
+```
+
+Both methods will result in the same chip element to be created. This chip element has a couple properties exposed
+
+**Properties**
+- **value** - The value provided in the createChip method
+- **color** - The #hex value of the color of the chip
+
+**Methods**
+- **flip()** - Flips the chip. Resulting chip will be same as start, but it is a nice-to-have animation during gameplay
+
+#### Chip Values
+
+The build in chip values (with colors) are
+- 1 (#FCFFFA)
+- 5 (#90382C)
+- 25 (#007533)
+- 50 (#0056D6)
+- 100 (#222222)
+
+*Note: There currently is no way to override the colors or values unless you hardcode new values in library. (PR is welcome for this). Also, with the white chip (value 1) blue icons are used instead of white (due to conflicting colors otherwise). Keep this in mind with adjusting colors*
