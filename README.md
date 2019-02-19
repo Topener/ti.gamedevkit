@@ -48,13 +48,9 @@ There are 2 properties that can be provided at this stage.
    - **face** - (createCard only) - The facing of the card (back/front)
    - **hand** - (createCard Only) - The hand the card is supposed to be in, up to your own interpretation. Default is `main`
    - **state** - (createCard only) - State of the hand, up to your interpretation. Set to "deck" when using `createDeck` method 
-- **dealDeckCardToPosition()** - deals the top card to a new position and returns said card
-
-- **setBackImage()** - Set the back image for all cards provided
+- **dealDeckCardToPosition(card, top, left)** - deals the top card to a new position and returns said card. Provide the card alongside the top/left positioning attributes
+- **setBackImage(image)** - Set the back image for all cards provided. Provide blob or local image path. 
 - **shuffle()** - will shuffle cards randomly, using zIndex for UI purposes
 - **reset()** - Resets all cards to original position and flips them with backs up, then does a shuffle
 - **getBack()** returns a blob of the image for the backside of the cards
 - **getTopCardFromDeck()** - Based on sorting of the deck will return the card on the top
-
-  * 
-  *
