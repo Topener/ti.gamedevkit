@@ -32,10 +32,14 @@ var deckInstance = new (require('ti.gamedevkit/cards'))({
 
 #### DeckInstance
 
-**Properties** 
+The deckInstance needs to be created with the following arguments, as also displayed in sample above.
+
+**Arguments** 
 
 - **backImage** - the image on the backside of the card. Good dimension for back is 932 x 1376 (or that ratio). Image has to be local
 - **animationSpeed** - For all animation purposes, like flip or animateTo
+
+The deckInstance also has a list of methods exposed
 
 **Methods**
 
