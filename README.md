@@ -4,6 +4,8 @@ The Titanium Game Dev Kit contains multiple libraries for making simple games. R
 
 Any requests are appreciated (submit a ticket) as I'm looking for ways of expanding this collection of libraries
 
+Note: iOS only for now. Android support will come in 8.1 due to [this bug](https://jira.appcelerator.org/browse/TIMOB-26650)
+
 ## Current Libraries
 
 - [ti.gamedevkit/cards](#tigamedevkitcards)
